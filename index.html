@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Validation Email</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <!-- <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script> -->
+  <!-- <script src="jquery-3.3.1.min.js"></script> -->
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <script src="./lib/validate-email.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <!-- <p id="email">fajartc02@gmail.com</p> -->
+  <form>
+    <input id="email" type="text"><p id="error"></p>
+  </form>
+  
+  <script>
+    let email = $("#email")
+    email.keyup(function () {
+      // alert("Handler for .keyup() called.");
+      // console.log('masuk');
+      if(email.emailValidator()) {
+        email.removeClass()
+        email.addClass("success")
+        $("#error").text('')
+      } else {
+        email.removeClass()
+        email.addClass("error")
+        $("#error").text('Email is invalid').css('color', 'red')
+      }
+      console.log(email.emailValidator());
+      
+      // console.log(email.val());
+    });
+  </script>
+</body>
+
+</html>
